@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lgh.mybatis</groupId>
+  <artifactId>MybatisTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>MybatisTest</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+ <build>
+    <sourceDirectory>src</sourceDirectory>
+    
+    <resources>
+          <resource>
+        <directory>D:\workspace\MybatisTest\src\main\resources</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+                 <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+    </plugins>
+
+<!--         <resources>
+            <resource>
+                <directory>src/config</directory>
+                <includes>
+                    <include>SqlMapConfig.xml</include>
+                </includes>
+            </resource>
+        </resources> -->
+
+
+  </build>
+  
+<dependencies>
+    <!-- 添加oracle jdbc driver -->  
+<dependency>
+    <groupId>com.Oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.2.0</version>
+</dependency>
+  <!-- ibatis.jar 从网络获取，则不需要手动导入ibatis的jar包！-->
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.4.3</version>
+       </dependency>
+      <!-- junit.jar -->
+       <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+     </dependency>
+
+    </dependencies>
+
+</project> 
+</project>
